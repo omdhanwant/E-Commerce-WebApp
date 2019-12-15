@@ -13,6 +13,7 @@ import { Products } from 'src/app/models/Product';
 export class ProductFormComponent implements OnInit {
   categories$;
   product:Products={
+    $key:null,
     title:null,
     price:null,
     category:null,

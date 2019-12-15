@@ -3,13 +3,12 @@
            <product-filter [category]="category"></product-filter>
     </div>
     <div class="col">
-      <div class="row">
+      <div class="row" *ngIf="cart$ | async as cart">
         <product-card class="col-md-6 col-sm-6 mb-5" *ngFor="let product of filteredProducts; let i = index;"  
-            [product]="product" [showAction]=true>
+            [product]="product" [shopping-cart]="cart" [showAction]=true>
         </product-card> 
+        <p *ngIf="filteredProducts.length == 0" style="font-size: 20px;">No data available.</p>
       </div>
-      
-            
     </div>
       
 </div>
