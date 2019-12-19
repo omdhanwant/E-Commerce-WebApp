@@ -42,7 +42,9 @@
 [resizable]="true"
 >
 <ng-template #dataTableCell let-item="item">
-        <a [routerLink]="['/admin/products/',item.$key]">Edit</a>
+        <a [routerLink]="['/admin/products/',item.$key]">
+            <img src="assets/edit.svg" width="20" height="20" class="d-inline-block align-top" alt="">
+        </a>
 </ng-template>
 
 </data-table-column>

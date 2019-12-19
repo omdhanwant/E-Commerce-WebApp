@@ -1,37 +1,46 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-    <a class="navbar-brand" routerLink="/">VegiFy</a>
+    <a class="navbar-brand" routerLinkActive="active" routerLink="/">
+      <img src="assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav">
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="/shopping-cart">
+          <a class="nav-link" routerLinkActive="active" routerLink="/shopping-cart">
             Shopping-Cart
             <ng-container *ngIf="cart$ | async as cart">
                 <span *ngIf="cart.totalItemsCount > 0" class="badge badge-warning badge-pill" >{{ cart.totalItemsCount}}</span>
             </ng-container>
           </a>
         </li>
-        <ng-template #anonymousUser>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/login">Login</a>
-          </li>
-        </ng-template>
+        
         <!-- <li *ngIf="!user" class="nav-item">
             <a class="nav-link" routerLink="/login">Login</a>
           </li> -->
+        
+      </ul>
+
+      <ul class="navbar-nav justify-content-end">
+        <ng-template #anonymousUser>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
+          </li>
+        </ng-template>
+
         <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
           <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{appUser.name}}
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" routerLink="/my-orders">My Orders</a>
+            <a class="dropdown-item" routerLinkActive="active" routerLink="/my-orders">My Orders</a>
             <ng-container *ngIf="appUser.isAdmin">
-              <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
-              <a class="dropdown-item" routerLink="/admin/products">Manage Products </a>
+              <a class="dropdown-item" routerLinkActive="active" routerLink="/admin/orders">Manage Orders</a>
+              <a class="dropdown-item" routerLinkActive="active" routerLink="/admin/products">Manage Products </a>
             </ng-container>
             
             <a class="dropdown-item" (click)="logout()">Log Out </a>

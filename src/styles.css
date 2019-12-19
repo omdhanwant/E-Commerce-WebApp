@@ -1,4 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-body {padding-top:80px;}
+body {
+    padding-top:80px;
+    padding-bottom:80px;
+    color: #495057
+}
+
+/* card styles override */
+.card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color:#fff!important;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+
+/* navigation link style overide */
+.navbar-light .navbar-nav .nav-link.active {
+    color: #495057;
+    background-color:#c0f399; 
+}
+
+
+/* primary button style override */
+.btn-primary {
+    color: #495057!important;
+    border-color: #c0f399!important;
+    background-color: #c0f399!important;
+}
+
+
+/* ul li list active style override */
+.list-group-item.active {
+    z-index: 2;
+    color: #495057;
+    border-color: #c0f399;
+    background-color: #c0f399;
+}
+
+
+/* dropdown style override */
+.dropdown-item.active, .dropdown-item:active {
+    color: #495057!important;
+    text-decoration: none;
+    background-color: #c0f399!important;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #495057!important;
+    text-decoration: none;
+    background-color: #c0f399!important;
+}
+
+
+/* table row style override  */
+.row-even{
+    background-color: #c0f399!important;
+}
+
+.row-odd{
+    background-color: #fff!important;
+}
+
+.data-table>thead>tr {
+    background-color: #c0f399!important;
+}
+
+.data-table .data-table-row:hover {
+    background-color: none!important;
+}
