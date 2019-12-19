@@ -13,7 +13,12 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ShippingFormComponent implements OnInit,OnDestroy {
   @Input('cart') cart:ShoppingCart
-  shipping = {};
+  shipping = {
+    name:null,
+    addressLine1:null,
+    addressLine2:null,
+    city:null
+  };
   userSubscription:Subscription
   userId:string
   
