@@ -16,6 +16,7 @@ import { ProductFilterComponent } from './products/product-filter/product-filter
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { ShoppingModule } from './shopping/shopping.module';
+import { CustomModalComponent } from './products/custom-modal/custom-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShoppingModule } from './shopping/shopping.module';
     HomeComponent,
     ProductsComponent,
     LoginComponent,
-    ProductFilterComponent
+    ProductFilterComponent,
+    CustomModalComponent
   ],
   imports: [
     BrowserModule,
