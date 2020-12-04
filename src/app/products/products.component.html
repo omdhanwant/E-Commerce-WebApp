@@ -3,11 +3,11 @@
            <product-filter [category]="category"></product-filter>
     </div>
     <div class="col">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"
-      data-backdrop="static" data-keyboard="false"></button>
+      <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+      data-backdrop="static" data-keyboard="false"></button> -->
 
       <div class="row" *ngIf="cart$ | async as cart">
-        <product-card class="col-md-6 col-sm-6 mb-5" *ngFor="let product of filteredProducts; let i = index;"  
+        <product-card class="col-md-4 col-sm-6 mb-5" *ngFor="let product of filteredProducts; let i = index;"  
             [product]="product" [shopping-cart]="cart" [showAction]=true>
         </product-card> 
         <p *ngIf="filteredProducts.length == 0" style="font-size: 20px;">No data available.</p>
@@ -16,6 +16,6 @@
       
 </div>
 
-<custom-modal [modalData]="'Modal Data Sent By Parent'">
+<!-- <custom-modal [modalData]="'Modal Data Sent By Parent'">
   This will be printed in the body section
-</custom-modal>
+</custom-modal> -->

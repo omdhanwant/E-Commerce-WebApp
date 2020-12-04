@@ -21,7 +21,7 @@ body {
 /* navigation link style overide */
 .navbar-light .navbar-nav .nav-link.active {
     color: #495057;
-    background-color:#c0f399; 
+    /* background-color:#c0f399;  */
 }
 
 
