@@ -1,13 +1,13 @@
-<div class="row no-gutters">
-    <div class="col-2">
-        <button (click)="removeFromCart()" class="btn btn-primary btn-block">-</button>
+<div class="counter_container">
+    <div>
+        <button (click)="removeFromCart()" class="btn btn-primary btn-block counter_btn">-</button>
     </div>
 
-    <div class="col text-center">
+    <div class="text-center counter_text">
         {{shoppingCart.getQuantity(product)}} in cart
     </div>
 
-    <div class="col-2">
-        <button (click)="addToCart()" class="btn btn-primary btn-block">+</button>
+    <div class="">
+        <button (click)="addToCart()" class="btn btn-primary btn-block counter_btn">+</button>
     </div>
 </div>

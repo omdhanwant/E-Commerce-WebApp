@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Observable } from 'rxjs';
 import { ShoppingCart } from '../../../shared/models/shopping-cart';
 import { ShoppingCartService } from '../../../shared/services/shopping-cart.service';
@@ -10,10 +11,12 @@ import { ShoppingCartService } from '../../../shared/services/shopping-cart.serv
 })
 export class ShoppingCartComponent implements OnInit {
   cart$:Observable<ShoppingCart>
-  constructor(private cartService:ShoppingCartService) { }
+  constructor(private cartService:ShoppingCartService, private loader: NgxUiLoaderService) { }
 
   async ngOnInit() {
+    this.loader.start();
     this.cart$ = await this.cartService.getCart();    
+    this.loader.stop();
   }
 
 

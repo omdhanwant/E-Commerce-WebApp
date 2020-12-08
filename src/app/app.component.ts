@@ -3,6 +3,7 @@ import { AuthService } from './shared/services/auth.service';
 import { Router } from '@angular/router';
 import { UserService } from './shared/services/user.service';
 import "rxjs/add/operator/take";
+import { NgxUiLoaderService, SPINNER } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,12 @@ import "rxjs/add/operator/take";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private auth:AuthService,private route:Router,private userService:UserService){
+  loaderType = SPINNER.doubleBounce;
+  constructor(private auth:AuthService,private route:Router,private userService:UserService, private loaderService: NgxUiLoaderService){
     this.auth.user$.take(1).subscribe(user => {
       if(!user) return
 
-        userService.save(user);
+        this.userService.save(user);
         
         let returnUrl =  sessionStorage.getItem('returnUrl');
         if(!returnUrl) return

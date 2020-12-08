@@ -18,6 +18,10 @@ import { AdminModule } from './admin/admin.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { CustomModalComponent } from './products/custom-modal/custom-modal.component';
 
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from './shared/services/auth-interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,15 +40,18 @@ import { CustomModalComponent } from './products/custom-modal/custom-modal.compo
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     NgbModule,
+    NgxUiLoaderModule,
     RouterModule.forRoot([
       
       {path: '', component:ProductsComponent},
       {path:'product' ,component : ProductsComponent},
-      {path : 'login' , component:LoginComponent}
-
+      {path : 'login' , component:LoginComponent},
+      {path:'**' ,component : ProductsComponent},
     ])
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,6 +7,7 @@ import "rxjs/add/operator/take";
 import { ShoppingCartService } from '../shared/services/shopping-cart.service';
 import { Observable } from 'rxjs';
 import { ShoppingCart } from '../shared/models/shopping-cart';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: "products",
@@ -22,11 +23,13 @@ export class ProductsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
     private productService: ProductService,
-    private shoppingCartService:ShoppingCartService) {
+    private shoppingCartService:ShoppingCartService,
+    private loader: NgxUiLoaderService) {
    
   }
 
   async ngOnInit(){
+    this.loader.start();
   this.populateProducts();
   this.cart$ = await this.shoppingCartService.getCart();                 
   }
@@ -40,6 +43,7 @@ export class ProductsComponent implements OnInit {
       return this.route.queryParamMap;
     })
     .subscribe(params => {
+      this.loader.stop();
       this.category = params.get("category");
       //filter products by category
       this.applyFilter();

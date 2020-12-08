@@ -57,6 +57,9 @@ body {
 
 
 /* table row style override  */
+.table td{
+    vertical-align: middle!important;
+}
 .row-even{
     background-color: #c0f399!important;
 }

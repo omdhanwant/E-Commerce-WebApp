@@ -10,7 +10,7 @@
         <product-card class="col-md-4 col-sm-6 mb-5" *ngFor="let product of filteredProducts; let i = index;"  
             [product]="product" [shopping-cart]="cart" [showAction]=true>
         </product-card> 
-        <p *ngIf="filteredProducts.length == 0" style="font-size: 20px;">No data available.</p>
+        <p *ngIf="filteredProducts.length == 0" class="no_data">No data available.</p>
       </div>
     </div>
       
