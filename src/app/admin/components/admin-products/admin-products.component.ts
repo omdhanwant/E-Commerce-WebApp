@@ -3,6 +3,7 @@ import { ProductService } from 'app/shared/services/product.service';
 import { Products } from 'app/shared/models/Product';
 import { Subscription } from 'rxjs';
 import { DataTableResource } from 'angular5-data-table';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-admin-products',
@@ -18,11 +19,13 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   itemCount:number
 
 
-  constructor(private productService:ProductService) { 
+  constructor(private productService:ProductService, private loader: NgxUiLoaderService) { 
+    this.loader.start();
    this.subscription =  this.productService.getAll().subscribe(p => 
     {
       this.products = p;
       this.initTable(p);
+      this.loader.stop();
      
     });
   }

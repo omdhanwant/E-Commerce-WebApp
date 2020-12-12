@@ -13,7 +13,7 @@
 
         <p class="sub_heading">Ordered Items</p>
         <div class="d-flex flex-wrap">
-            <ng-container *ngFor="let item of order.items">
+            <ng-container *ngFor="let item of order?.items">
                 <div class="d-flex flex-column item_container">
                     <div [style.backgroundImage]="'url(' + item?.product.imageUrl + ')'" class="thumbnail"></div>
                     <div class="name">{{item?.product?.title}}</div>

@@ -19,8 +19,8 @@
 </table> -->
 <div class="row">
   <div class="col-md-6 col-sm-4">
-    <div class="d-flex flex-column">
-      <ng-container *ngFor="let order of orders$ | async">
+    <div class="d-flex flex-column order_list" *ngIf="orders$ | async as orders">
+      <ng-container *ngFor="let order of orders | orderBy : 'dateCreated' :  true ">
         <order-card (onClick)="selectedOrder = $event" [order]="order"></order-card>
       </ng-container>
     </div>

@@ -1,0 +1,4 @@
+.order_list{
+    max-height: 500px;
+    overflow: scroll;
+}

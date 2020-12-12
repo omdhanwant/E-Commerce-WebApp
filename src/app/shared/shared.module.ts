@@ -16,6 +16,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { OrderDetailCardComponent } from './components/order-detail-card/order-detail-card.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OrderDetailCardComponent } from './components/order-detail-card/order-d
     CustomFormsModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    OrderModule
   ],
   exports: [
     ProductCardComponent,
@@ -42,7 +44,8 @@ import { OrderDetailCardComponent } from './components/order-detail-card/order-d
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     OrderCardComponent,
-    OrderDetailCardComponent
+    OrderDetailCardComponent,
+    OrderModule
   ],
   providers:[
     AuthGaurd,
