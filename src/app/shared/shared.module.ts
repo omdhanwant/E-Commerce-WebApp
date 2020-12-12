@@ -14,11 +14,15 @@ import { DataTableModule } from 'angular5-data-table';
 import { CustomFormsModule } from 'ng2-validation';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { OrderCardComponent } from './components/order-card/order-card.component';
+import { OrderDetailCardComponent } from './components/order-detail-card/order-detail-card.component';
 
 @NgModule({
   declarations: [
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    OrderCardComponent,
+    OrderDetailCardComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +41,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     DataTableModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    OrderCardComponent,
+    OrderDetailCardComponent
   ],
   providers:[
     AuthGaurd,

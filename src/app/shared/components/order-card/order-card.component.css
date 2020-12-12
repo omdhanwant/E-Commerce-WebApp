@@ -1,0 +1,16 @@
+.order_container {
+    padding: 20px 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.order_container:hover {
+    background-color: #e6e6e6;
+}
+
+.date{
+    color: gray;
+    font-size: 14px;
+}

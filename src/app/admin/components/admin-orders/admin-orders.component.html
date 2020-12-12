@@ -1,5 +1,5 @@
 <h1>Orders</h1>
-<table class="table">
+<!-- <table class="table">
   <thead>
     <tr>
       <th>Customer</th>
@@ -16,4 +16,17 @@
       </td>
     </tr>
   </tbody> 
-</table>
+</table> -->
+<div class="row">
+  <div class="col-md-6 col-sm-4">
+    <div class="d-flex flex-column">
+      <ng-container *ngFor="let order of orders$ | async">
+        <order-card (onClick)="selectedOrder = $event" [order]="order"></order-card>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-8">
+    <order-detail-card [ngStyle]="{display : selectedOrder ? 'block' : 'none'  }" [order]="selectedOrder"></order-detail-card>
+  </div>
+</div>

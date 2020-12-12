@@ -12,6 +12,7 @@ import { NgxUiLoaderService, SPINNER } from 'ngx-ui-loader';
 })
 export class AppComponent {
   loaderType = SPINNER.doubleBounce;
+  appColor = "#c0f399"
   constructor(private auth:AuthService,private route:Router,private userService:UserService, private loaderService: NgxUiLoaderService){
     this.auth.user$.take(1).subscribe(user => {
       if(!user) return

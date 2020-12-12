@@ -10,6 +10,7 @@ import { Order } from 'app/shared/models/Order';
 })
 export class AdminOrdersComponent implements OnInit {
   orders$:Observable<Order[]>
+  selectedOrder: Order = null;
   constructor(private orderService:OrderService) {    
    }
 
